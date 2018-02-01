@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<article>
+  <header class="hero is-info">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1 is-spaced">{{ page.title | escape }}</h1>
+      </div>
+    </div>
+  </header>
+
+  <div class="section">
+    <div class="container">
+      <div class="columns">
+          <div class="column is-3">
+            <aside class="menu">
+              {% if site.docs[0] %}
+                {% for item in site.docs %}
+                  <p class="menu-label">
+                    {{ item.title }}
+                  </p>
+                  {% if item.links[0] %}
+                    <ul class="menu-list">
+                      {% for entry in item.links %}
+                          <li><a {% if page.url == entry.url %}class="is-active"{% endif %} href="{{ entry.url | absolute_url }}">{{ entry.page }}</a>
+                            {% if entry.links[0] %}
+                              <ul>
+                              {% for subentry in entry.links %}
+                                  <li><a href="{{ subentry.url | absolute_url }}">{{ subentry.page }}</a></li>
+                              {% endfor %}
+                              </ul>
+                            {% endif %}
+                          </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </aside>
+          </div>
+          <div class="column content">
+            {{ content }}
+          </div>
+        </div>
+    </div>
+  </div>
+</article>
