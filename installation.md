@@ -36,7 +36,7 @@ If you're building Caddy from source, you should import `github.com/filebrowser/
 
 ## Docker
 
-File Browser is also available on Docker through [Docker Hub](https://hub.docker.com/r/hacdias/filemanager/). To install it, run:
+File Browser is also available on Docker through [Docker Hub](https://hub.docker.com/r/hacdias/filebrowser/). To install it, run:
 
 ```
 docker pull hacdias/filebrowser
