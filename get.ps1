@@ -15,7 +15,7 @@
 function Install-FileManager {
 	$ErrorActionPreference = "Stop"
 
-	$resource = "https://api.github.com/repos/hacdias/filemanager/releases/latest"
+	$resource = "https://api.github.com/repos/filebrowser/filebrowser/releases/latest"
 	$tag = Invoke-RestMethod -Method Get -Uri $resource | select -Expand tag_name
 	$arch = "386"
 
@@ -23,10 +23,10 @@ function Install-FileManager {
 		$arch = "amd64"
 	}
 
-	$file = "windows-$arch-filemanager.zip"
+	$file = "windows-$arch-filebrowser.zip"
 	$url = "https://github.com/filebrowser/filebrowser/releases/download/$tag/$file"
 	$temp =  New-TemporaryFile
-	$folder = "${env:ProgramFiles}\filemanager"
+	$folder = "${env:ProgramFiles}\filebrowser"
 
 	Write-Host "Downloading" $url
 		$WebClient = New-Object System.Net.WebClient 
@@ -36,15 +36,15 @@ function Install-FileManager {
 		Move-Item $temp "$temp.zip"
 		Expand-Archive "$temp.zip" -DestinationPath $temp
 
-	Write-Host "Installing filemanager on $folder"
+	Write-Host "Installing filebrowser on $folder"
 		If (-not (Test-Path $folder)) {
 			New-Item -ItemType "directory" -Path $folder | Out-Null
 		}
-		if (Test-Path "$folder\filemanager.exe") {
+		if (Test-Path "$folder\filebrowser.exe") {
 			Write-Host "Removing the old version"
-			Remove-Item -Force "$folder\filemanager.exe"
+			Remove-Item -Force "$folder\filebrowser.exe"
 		}
-		Move-Item "$temp\filemanager.exe" "$folder\filemanager.exe"
+		Move-Item "$temp\filebrowser.exe" "$folder\filebrowser.exe"
 
 	Write-Host "Cleaning temporary files"
 		Remove-Item -Force "$temp.zip"
