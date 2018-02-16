@@ -45,7 +45,7 @@ install_filemanager()
 	# Which OS and version? #
 	#########################
 
-	filemanager_bin="filemanager"
+	filemanager_bin="filebrowser"
 	filemanager_dl_ext=".tar.gz"
 
 	# NOTE: `uname -m` is more accurate and universal than `arch`
@@ -79,7 +79,7 @@ install_filemanager()
 		# Should catch cygwin
 		sudo_cmd=""
 		filemanager_os="windows"
-		filemanager_bin="filemanager.exe"
+		filemanager_bin="filebrowser.exe"
 		filemanager_dl_ext=".zip"
 	else
 		echo "Aborted, unsupported or unknown OS: $uname"
