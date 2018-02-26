@@ -13,7 +13,7 @@ This meaning of each flag is transcendant to the correspondant options in the co
 - ```-a, --address``` is the address to listen to. Defaults to "" (empty string, all of the addresses).
 - ```-b, --baseurl``` is the baseURL where File Browser will be available at.
 - ```-c, --config``` specifies a configuration file.
-- ```-d, --database```is the path to the database file. Defaults to "./filemanager.db".
+- ```-d, --database``` is the path to the database file. Defaults to "./filebrowser.db".
 - ```-l, --log``` indicates the error logger; it can be 'stdout', 'stderr' or a file path. Defaults to "stdout".
 - ```-p, --port``` is the port to listen to. Defaults 0 (random free port).
 - ```--staticgen``` specifies if you want to enable a Static Website Generator (jekyll and hugo are available).
@@ -33,7 +33,7 @@ These options are used to set the default values for new users:
 So, if you wanted to run File Browser on port 80, with the database on `/etc/fm.db` and the default scope to `/data`, you would run:
 
 ```
-filemanager --port 80 --database /etc/fm.db --scope /data
+filebrowser --port 80 --database /etc/fm.db --scope /data
 ```
 
 ### Available Locales
@@ -51,7 +51,7 @@ Right now, File Browser is available in the following languages:
 
 ## Configuration File
 
-By default, File Browser will try to find a file named "filemanager.yaml", "filemanager.toml" or "filemanager.json" on the current working directory to use as its configuration file. If you want to use another file, you only need to specify the `-c` flag with its path.
+By default, File Browser will try to find a file named "filebrowser.yaml", "filebrowser.toml" or "filebrowser.json" on the current working directory to use as its configuration file. If you want to use another file, you only need to specify the `-c` flag with its path.
 
 Here is a specimen of a JSON configuration file:
 
