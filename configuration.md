@@ -40,9 +40,12 @@ filemanager --port 80 --database /etc/fm.db --scope /data
 
 Right now, File Browser is available in the following languages:
 
+- `de` - German
 - `en` - English
+- `es` - Spanish
+- `fr` - French
+- `ja` - Japanese
 - `pt` - Portuguese
-- `jp` - Japanese
 - `zh-cn` - Chinese (Simplified)
 - `zh-tw` - Chinese (Traditional)
 
