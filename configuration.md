@@ -18,6 +18,7 @@ This meaning of each flag is transcendant to the correspondant options in the co
 - ```-p, --port``` is the port to listen to. Defaults 0 (random free port).
 - ```--staticgen``` specifies if you want to enable a Static Website Generator (jekyll and hugo are available).
 - ```-v, --version``` prints the version of the executable.
+- ```--alternative-recaptcha``` replaces `https://www.google.com` to `https://recaptcha.net` in ReCaptcha handling and serving, especially useful in China. See [https://github.com/filebrowser/filebrowser/issues/366](gh-filebrowser#366) for details. Defaults to `false`.
 - ```--recaptcha-key``` is the ReCAPTCHA site key. Enables ReCAPTCHA on login.
 - ```--recaptcha-secret``` is the ReCAPTCHA secret key. Enables ReCAPTCHA on login.
 
@@ -61,6 +62,7 @@ Here is a specimen of a JSON configuration file:
   "noAuth": false,
   "baseURL": "/admin",
   "address": "127.0.0.1",
+  "alternativeReCaptcha": false,
   "reCaptchaKey": "",
   "reCaptchaSecret": "",
   "database": "/path/to/database.db",
@@ -84,6 +86,7 @@ port: 80
 baseURL: /admin
 noAuth: false
 address: 127.0.0.1
+alternativeReCaptcha: false,
 reCaptchaKey: ''
 reCaptchaSecret: ''
 database: "/path/to/database.db"
@@ -105,6 +108,7 @@ port = 80
 baseURL = /admin
 address = 127.0.0.1
 noAuth = false
+alternativeReCaptcha = false
 reCaptchaKey = ''
 reCaptchaSecret = ''
 database = "/path/to/database.db"
