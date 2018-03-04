@@ -92,7 +92,7 @@ install_filemanager()
 
 	echo "Downloading File Browser for $filemanager_os/$filemanager_arch..."
 	filemanager_file="${filemanager_os}-$filemanager_arch-filemanager$filemanager_dl_ext"
-	filemanager_tag="$(curl -s https://api.github.com/repos/hacdias/filemanager/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g' | sed 's/tag_name: //g')"
+	filemanager_tag="$(curl -s https://api.github.com/repos/filebrowser/filebrowser/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g' | sed 's/tag_name: //g')"
 	filemanager_url="https://github.com/filebrowser/filebrowser/releases/download/$filemanager_tag/$filemanager_file"
 	echo "$filemanager_url"
 
