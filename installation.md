@@ -36,10 +36,10 @@ If you're building Caddy from source, you should import `github.com/filebrowser/
 
 ## Docker
 
-File Browser is also available on Docker through [Docker Hub](https://hub.docker.com/r/hacdias/filemanager/). To install it, run:
+File Browser is also available on Docker through [Docker Hub](https://hub.docker.com/r/hacdias/filebrowser/). To install it, run:
 
 ```
-docker pull hacdias/filemanager
+docker pull hacdias/filebrowser
 ```
 
 The paths you need to bind to do your own configuration are:
@@ -71,7 +71,7 @@ docker run \
     -v /path/to/config.json:/config.json \
     -v /path/to/database.db:/database.db \
     -p 80:80 \
-    hacdias/filemanager
+    hacdias/filebrowser
 ```
 
 Using command line arguments:
@@ -81,7 +81,7 @@ docker run \
     -v /path/to/sites/root:/srv \
     -v /path/to/database.db:/database.db \
     -p 80:80 \
-    hacdias/filemanager
+    hacdias/filebrowser
     --port 80
     --database /database.db
     --scope /srv
