@@ -1,8 +1,10 @@
 // 1. Import the initial variables
 @import "bulma/sass/utilities/initial-variables"
 
+$info: #bdeaff
 $blue: #2979ff
 $primary: $blue
+$breadcrumb-item-separator-color: $blue
 
 @import "bulma/bulma"
 
@@ -14,32 +16,28 @@ body
 .flex
     flex: 1 0 auto
 
-.container
-    max-width: 960px !important
-    width: 95%
+.breadcrumb img
+    max-height: 1.75rem
+    margin-right: .5rem
 
-.is-transparent
-    background-color: transparent
+.hero-body
+    padding: 2rem 1.5rem
 
-.hero.is-ocean
-    background-color: #40c4ff
+.home-hero
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    border-radius: .1em
+    margin: 2em auto
+    max-width: 35em
 
-.logo 
-    color: #fff
-    font-weight: bold
-
-.fa svg
-    height: 42px
-    fill: #4a4a4a
+.home-banner
+    margin: 1em auto
+    max-width: 40em
 
 #features .icon.is-large
     margin-bottom: .5em
 
-.banner-header
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
-    border-radius: .1em
-    margin: 2em auto
-    max-width: 50em
+.footer
+    padding: 1.5rem
 
 .shields
     margin-top: 10px
