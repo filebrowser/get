@@ -2,15 +2,25 @@
 layout: default
 ---
 
-<article>
-  <header class="hero is-info">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title is-1 is-spaced">{{ page.title | escape }}</h1>
-      </div>
+<header class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+      <nav class="breadcrumb is-medium has-succeeds-separator has-text-primary has-text-weight-bold" aria-label="breadcrumbs">
+        <ul>
+          <li>
+            <a class="logo" href="{{ "/" | absolute_url }}">
+              <img src="https://github.com/filebrowser/logo/raw/master/icon_raw.png">
+                File Browser
+            </a>
+          </li>
+          <li class="is-active"><a href="#" aria-current="page">{{ page.title | escape }}</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
+<article>
   <div class="section">
     <div class="container">
       <div class="columns">

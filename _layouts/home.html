@@ -5,142 +5,129 @@ layout: default
 <header class="hero is-info">
   <div class="hero-body">
     <div class="container">
-      <h2 class="subtitle has-text-centered">A stylish file manager</h2>
-      <figure class="image banner-header">
+      <figure class="image home-banner">
+        <img src="assets/images/banner.svg">
+      </figure>
+      <h2 class="subtitle has-text-centered has-text-dark">A stylish web-based file manager</h2>
+      <div class="buttons is-centered">
+          <a class="button is-medium is-link is-outlined" href="{{ site.url }}{{ site.baseurl }}/quick-start/">Quick Start</a>
+          <a class="button is-medium is-link is-outlined" href="{{ site.url }}{{ site.baseurl }}/installation/">Installation</a>
+          <a class="button is-medium is-link is-outlined" href="{{ site.url }}{{ site.baseurl }}/configuration/">Configuration</a>
+      </div>
+      <figure class="image home-hero">
         <img src="assets/images/hero.png">
       </figure>
-
-      <div class="block has-text-centered">
-        <a class="button is-medium is-primary is-inverted" href="{{ site.url }}{{ site.baseurl }}/quick-start/">
-          Get Started
-        </a>
-        <a class="button is-medium is-primary is-inverted" href="https://github.com/filebrowser/filebrowser/">
-          <span class="icon is-medium">
-            <i class="fa fa-github"></i>
-          </span>
-          <span>Star</span>
-        </a>
-      </div>
     </div>
   </div>
 </header>
 
 <section class="section" id="features">
   <div class="container">
-    <h2 class="title is-2 is-spaced has-text-centered">Features</h2>
+    <h2 class="has-text-primary title is-2 is-spaced has-text-centered">Features</h2>
     <div class="columns is-multiline">
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Cloud</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-cloud"></i>
+            <i class="fa fa-cloud fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          Create, edit, copy, move, download your files easily, everywhere, every time, use File Browser
-          as your personal cloud.
+          Create, edit, copy, move, download your files easily, everywhere, every time. Use File Browser
+          as your <b>personal cloud</b>.
         </p>
       </div>
 
      <div class="column is-one-third">
-        <p class="heading has-text-centered">Search</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          Search through your files and find the one instantly. Filter by type, by extension.
+          <b>Search</b> through your files and find the one instantly. Filter by type, by extension...
         </p>
       </div>
 
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Users</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-users"></i>
+            <i class="fa fa-users fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          You can have multiple users, each one with their own folder, permissions and access roles.
+          <b>Multiple users</b> are supported, each one with their own folder, permissions and access roles.
         </p>
       </div>
 
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Languages</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-globe"></i>
+            <i class="fa fa-globe fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          Available in multiple languages! It's not available in yours? You can contribute and translate it yourself
-          for the community.
+          Available in <b>multiple languages</b>! It's not <a href="https://github.com/filebrowser/frontend/tree/master/src/i18n">available</a> in yours?
+          You can contribute and translate it yourself for the community.
         </p>
       </div>
 
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Commands</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-terminal"></i>
+            <i class="fa fa-terminal fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          You can execute commands such as git, svn or hg on the web interface. They are configured by you
-          so you can run whatever you want.
+          <b>Execute commands</b> such as <code>git</code>, <code>svn</code>, <code>hg</code>, <code>gofmt</code>... on the web interface.
+          They are <a href="{{ site.url }}{{ site.baseurl }}/configuration/">configured</a> by you so you can run whatever you want.
         </p>
       </div>
 
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Static Binary</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-archive"></i>
+            <i class="fa fa-archive fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          File Browser is a single executable file with no dependencies. You just need to download
-          it and add it to your PATH.
-        </p>
-      </div>
-      
-      <div class="column is-one-third">
-        <p class="heading has-text-centered">Caddy</p>
-        <p class="has-text-centered">
-          <span class="icon is-large">
-            <i class="fa fa-lock"></i>
-          </span>
-        </p>
-        <p>
-          File Browser is available as a <a href="/installation/#caddy">plugin</a> for Caddy, 
-          which is the HTTP/2 web server with automatic HTTPS.
+          File Browser is a <b>single executable file with no dependencies</b>. Just download
+          it and add it to your <code>PATH</code>. See <a href="{{ site.url }}{{ site.baseurl }}/installation/">Installation</a>.
         </p>
       </div>
 
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Docker</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
+          <span class="icon is-large">
+            <i class="fa fa-lock fa-2x"></i>
+          </span>
+        </div>
+        <p>
+          File Browser is available as a <a href="{{ site.url }}{{ site.baseurl }}/installation/#caddy">plugin</a> for <a href="https://caddyserver.com/">Caddy</a>
+          (a HTTP/2 web server with automatic HTTPS).
+        </p>
+      </div>
+
+      <div class="column is-one-third">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
             <i class="fa">
-              {% include docker.svg %}
+              <img src="assets/images/docker.svg">
             </i>
           </span>
-        </p>
+        </div>
         <p>
-          File Browser can be easily installed using Docker with <code>docker pull hacdias/filemanager</code>.
+          File Browser can be easily installed using <a href="https://www.docker.com/">Docker</a> with <code>docker pull hacdias/filebrowser</code>.
         </p>
       </div>
 
       <div class="column is-one-third">
-        <p class="heading has-text-centered">Static Generators</p>
-        <p class="has-text-centered">
+        <div class="has-text-primary has-text-centered">
           <span class="icon is-large">
-            <i class="fa fa-file-text"></i>
+            <i class="fa fa-file-text fa-2x"></i>
           </span>
-        </p>
+        </div>
         <p>
-          File Browser plays well with some static website generators, such as Jekyll and Hugo.
+          File Browser plays well with <b>static website generators</b>, such as <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://gohugo.io/">Hugo</a>.
         </p>
       </div>
     </div>
