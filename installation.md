@@ -8,7 +8,7 @@ There are some different ways you can use to install File Browser on your comput
 
 ## One-step Script
 
-If you're running a Linux distribution, macOS or any other platform where `curl` or `wget` commands are available, you can use our special script - made by [Kyle Frost](https://www.kylefrost.me/) - to download the latest version of File Browser and install it on `/user/local/bin`.
+If you're running a Linux distribution, macOS or any other platform where `curl` or `wget` commands are available, you can use our special script - made by [Kyle Frost](https://www.kylefrost.me/) - to download the latest version of File Browser and install it on `/usr/local/bin`.
 
 With curl:
 
