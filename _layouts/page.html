@@ -18,24 +18,17 @@ layout: default
             <aside class="menu">
               {% if site.docs[0] %}
                 {% for item in site.docs %}
-                  <p class="menu-label">
-                    {{ item.title }}
-                  </p>
-                  {% if item.links[0] %}
-                    <ul class="menu-list">
-                      {% for entry in item.links %}
-                          <li><a {% if page.url == entry.url %}class="is-active"{% endif %} href="{{ entry.url | absolute_url }}">{{ entry.page }}</a>
-                            {% if entry.links[0] %}
-                              <ul>
-                              {% for subentry in entry.links %}
-                                  <li><a href="{{ subentry.url | absolute_url }}">{{ subentry.page }}</a></li>
-                              {% endfor %}
-                              </ul>
-                            {% endif %}
-                          </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
+                  <ul class="menu-list">
+                    <li><a {% if page.url == item.url %}class="is-active"{% endif %} href="{{ item.url | absolute_url }}">{{ item.page }}</a>
+                      {% if item.links[0] %}
+                      <ul>
+                        {% for entry in item.links %}
+                          <li><a href="{{ entry.url | absolute_url }}">{{ entry.page }}</a></li>
+                        {% endfor %}
+                      </ul>
+                      {% endif %}
+                    </li>
+                  </ul>
                 {% endfor %}
               {% endif %}
             </aside>
@@ -47,3 +40,4 @@ layout: default
     </div>
   </div>
 </article>
+  
