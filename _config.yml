@@ -14,20 +14,25 @@ kramdown:
     disable : true
 
 docs:
-  - title: Documentation
+  - page: Quick Start
+    url: /quick-start/
+  - page: Installation
+    url: /installation/
     links:
-      - page: Quick Start
-        url: /quick-start/
-      - page: Installation
-        url: /installation/
-        links:
-          - page: One-step Script
-            url: /installation/#one-step-script
-          - page: Caddy
-            url: /installation/#caddy
-          - page: Docker
-            url: /installation/#docker
-      - page: Configuration
-        url: /configuration/
-      - page: Caddy Plugins
-        url: /caddy/
+      - page: One-step Script
+        url: /installation/#one-step-script
+      - page: Caddy
+        url: /installation/#caddy
+      - page: Docker
+        url: /installation/#docker
+  - page: Configuration
+    url: /configuration/
+    links:
+      - page: Flags
+        url: /configuration/#flags
+      - page: Available locales
+        url: /configuration/#available-locales
+      - page: Configuration file
+        url: /configuration/#configuration-file
+  - page: Caddy Plugins
+    url: /caddy/
