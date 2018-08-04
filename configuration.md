@@ -45,8 +45,12 @@ Right now, File Browser is available in the following languages:
 - `en` - English
 - `es` - Spanish
 - `fr` - French
+- `it` - Italian
 - `ja` - Japanese
+- `pl` - Polish
 - `pt` - Portuguese
+- `pt-br` - Portuguese (Brasil)
+- `ru` - Romanian
 - `zh-cn` - Chinese (Simplified)
 - `zh-tw` - Chinese (Traditional)
 
