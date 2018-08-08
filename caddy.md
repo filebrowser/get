@@ -15,7 +15,7 @@ filemanager [url] [scope] {
     no_auth
     recaptcha_key       key
     recaptcha_secret    secret
-    alternative_recaptcha
+    recaptcha_host      host
     locale              [en|jp|...]
     allow_commands      [true|false]
     allow_edit          [true|false]
@@ -30,7 +30,7 @@ filemanager [url] [scope] {
 + **database** is the path for the database where the settings will be stored.
 + **no_auth** disables the authentication. This should be enabled if you will use another login method (such as `basicauth`).
 + **recaptcha_key** and **recaptcha_secret** are the Site Key and Secret Key used to enable ReCaptcha on login.
-+ **alternative_recaptcha** replaces `https://www.google.com` to `https://recaptcha.net` in ReCaptcha handling and serving, especially useful in China. See [gh-filebrowser#366](https://github.com/filebrowser/filebrowser/issues/366) for details. Defaults to `false`.
++ **recaptcha_host** is the ReCaptcha host that handles everything. By default it is "https://google.com" but it might be useful to use other providers, such as "https://recaptcha.net" in places like China.
 
 The following options are mere defaults: they will only be used as the default options for **new users**. After creating a user, its settings should be changed through the Web UI. Although, when using `no_auth` option, the following will define the user permissions.
 
