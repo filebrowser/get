@@ -54,12 +54,14 @@ By default, the image uses the configuration file (which is also our recommendat
 {
   "port": 80,
   "address": "",
-  "database": "/etc/database.db",
-  "scope": "/srv",
-  "allowCommands": true,
-  "allowEdit": true,
-  "allowNew": true,
-  "commands": []
+  "database": "/database.db",
+  "defaults": {
+    "scope": "/srv",
+    "allowCommands": true,
+    "allowEdit": true,
+    "allowNew": true,
+    "commands": []
+  }
 }
 ```
 
