@@ -30,7 +30,7 @@ filemanager [url] [scope] {
 + **database** is the path for the database where the settings will be stored.
 + **no_auth** disables the authentication. This should be enabled if you will use another login method (such as `basicauth`).
 + **recaptcha_key** and **recaptcha_secret** are the Site Key and Secret Key used to enable ReCaptcha on login.
-+ **recaptcha_host** is the ReCaptcha host that handles everything. By default it is "https://google.com" but it might be useful to use other providers, such as "https://recaptcha.net" in places like China.
++ **recaptcha_host** is the ReCaptcha host that handles everything. By default it is "https://google.com" but it might be useful to use other providers, such as "https://recaptcha.net" in places such as China.
 
 The following options are mere defaults: they will only be used as the default options for **new users**. After creating a user, its settings should be changed through the Web UI. Although, when using `no_auth` option, the following will define the user permissions.
 

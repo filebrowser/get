@@ -86,7 +86,7 @@ docker run \
     hacdias/filebrowser
     --port 80
     --database /database.db
-    --scope /srv
+    -s /srv
     --other-flag other-value
 ```
 
