@@ -71,7 +71,7 @@ docker run \
     -v /path/to/config.json:/config.json \
     -v /path/to/database.db:/database.db \
     -p 80:80 \
-    hacdias/filebrowser
+    filebrowser/filebrowser
 ```
 
 Using command line arguments:
@@ -81,7 +81,7 @@ docker run \
     -v /path/to/sites/root:/srv \
     -v /path/to/database.db:/database.db \
     -p 80:80 \
-    hacdias/filebrowser
+    filebrowser/filebrowser
     --port 80
     --database /database.db
     --scope /srv
