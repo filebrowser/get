@@ -51,18 +51,24 @@ install_filemanager()
 	# NOTE: `uname -m` is more accurate and universal than `arch`
 	# See https://en.wikipedia.org/wiki/Uname
 	unamem="$(uname -m)"
-	if [[ $unamem == *aarch64* ]]; then
-		filemanager_arch="arm"
-	elif [[ $unamem == *64* ]]; then
-		filemanager_arch="amd64"
-	elif [[ $unamem == *86* ]]; then
-		filemanager_arch="386"
-	elif [[ $unamem == *arm* ]]; then
-		filemanager_arch="arm"
-	else
+	case $unamem in
+	*aarch64*)
+		filemanager_arch="arm";;
+	*64*)
+		filemanager_arch="amd64";;
+	*86*)
+		filemanager_arch="386";;
+	*armv5*)
+		filemanager_arch="armv5";;
+	*armv6*)
+		filemanager_arch="armv6";;
+	*armv7*)
+		filemanager_arch="armv7";;
+	*)
 		echo "Aborted, unsupported or unknown architecture: $unamem"
 		return 2
-	fi
+		;;
+	esac
 
 	unameu="$(tr '[:lower:]' '[:upper:]' <<<$(uname))"
 	if [[ $unameu == *DARWIN* ]]; then
