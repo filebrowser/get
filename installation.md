@@ -32,7 +32,7 @@ iwr -useb https://filebrowser.github.io/get.ps1 | iex
 
 The easiest way to get started is using this with Caddy web server. You just need to download Caddy from its [official website](https://caddyserver.com/download) with `http.filemanager` plugin enabled. For more information about the plugin itself, please refer to its [documentation](https://caddyserver.com/docs/http.filemanager).
 
-If you're building Caddy from source, you should import `github.com/filebrowser/filebrowser/caddy/filemanager` for File Browser, `github.com/filebrowser/filebrowser/caddy/hugo` for Hugo and `github.com/filebrowser/filebrowser/caddy/jekyll` for Jekyll.
+If you're building Caddy from source, you should import `github.com/filebrowser/caddy/filemanager` for File Browser, `github.com/filebrowser/caddy/hugo` for Hugo and `github.com/filebrowser/caddy/jekyll` for Jekyll.
 
 ## Docker
 
