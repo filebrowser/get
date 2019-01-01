@@ -53,7 +53,7 @@ install_filemanager()
 	unamem="$(uname -m)"
 	case $unamem in
 	*aarch64*)
-		filemanager_arch="arm";;
+		filemanager_arch="arm64";;
 	*64*)
 		filemanager_arch="amd64";;
 	*86*)
