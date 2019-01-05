@@ -4,7 +4,7 @@ description: > # this means to ignore newlines until "baseurl:"
   File Browser is a stylish and elegant web file manager you can use
   as your own cloud or integrate on your own applications.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://filebrowser.xyz/"
+url: "https://filebrowser.xyz"
 twitter_username: hacdias
 github_username:  filebrowser
 google_analytics: UA-114347250-1
