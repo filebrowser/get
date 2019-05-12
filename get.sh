@@ -9,9 +9,9 @@
 #   This script installs File Browser to your path.
 #   Usage:
 #
-#   	$ curl -fsSL https://filebrowser.github.io/get.sh | bash
+#   	$ curl -fsSL https://filebrowser.xyz/get.sh | bash
 #   	  or
-#   	$ wget -qO- https://filebrowser.github.io/get.sh | bash
+#   	$ wget -qO- https://filebrowser.xyz/get.sh | bash
 #
 #   In automated environments, you may want to run as root.
 #   If using curl, we recommend using the -fsSL flags.
