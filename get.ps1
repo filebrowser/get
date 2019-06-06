@@ -54,7 +54,7 @@ function Install-FileManager {
 		if ((Get-Command "pandoc.exe" -ErrorAction SilentlyContinue) -eq $null) { 
 			$path = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH).Path
 			$path = $path + ";$folder"
-			Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH –Value $path
+			Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name PATH -Value "$path"
 		}
 
 	Write-Host "filemanager successfully installed!" -ForegroundColor Green 
