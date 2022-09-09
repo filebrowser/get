@@ -7,7 +7,7 @@
 #
 #   Usage:
 #
-#   	iwr -useb https://filebrowser.xyz/get.ps1 | iex
+#   	iwr -useb https://raw.githubusercontent.com/filebrowser/get/master/get.ps1 | iex
 #
 #	You should run it as administrator so it can add filemanager to 
 #	the PATH.
