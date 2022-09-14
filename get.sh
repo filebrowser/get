@@ -119,7 +119,7 @@ install_filemanager()
 	echo "Extracting..."
 	case "$filemanager_file" in
 		*.zip)    unzip -o "$PREFIX/tmp/$filemanager_file" "$filemanager_bin" -d "$PREFIX/tmp/" ;;
-		*.tar.gz) tar -xzf "$PREFIX/tmp/$filemanager_file" -C "$PREFIX/tmp/" "$filemanager_bin" ;;
+		*.tar.gz) tar --no-same-owner -xzf "$PREFIX/tmp/$filemanager_file" -C "$PREFIX/tmp/" "$filemanager_bin" ;;
 	esac
 	chmod +x "$PREFIX/tmp/$filemanager_bin"
 
