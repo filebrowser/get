@@ -99,18 +99,20 @@ install_filemanager()
 	echo "Downloading File Browser for $filemanager_os/$filemanager_arch..."
 	if type -p curl >/dev/null 2>&1; then
 		net_getter="curl -fsSL"
+		tag_getter="curl -si"
 	elif type -p wget >/dev/null 2>&1; then
 		net_getter="wget -qO-"
+		tag_getter="wget -SO /dev/null 2>&1"
 	else
 		echo "Aborted, could not find curl or wget"
 		return 7
 	fi
 	
 	filemanager_file="${filemanager_os}-$filemanager_arch-filebrowser$filemanager_dl_ext"
-	filemanager_tag="$(${net_getter}  https://api.github.com/repos/filebrowser/filebrowser/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g' | sed 's/tag_name: //g')"
+	filemanager_tag="$(${tag_getter}  https://github.com/filebrowser/filebrowser/releases/latest | tac | tac | grep -m 1 "ocation:" | sed -z "s+.*/++" | tr -d '\r')"
 	filemanager_url="https://github.com/filebrowser/filebrowser/releases/download/$filemanager_tag/$filemanager_file"
 	echo "$filemanager_url"
-
+	
 	# Use $PREFIX for compatibility with Termux on Android
 	rm -rf "$PREFIX/tmp/$filemanager_file"
 
