@@ -19,7 +19,7 @@ function Install-FileManager {
 	$tag = Invoke-RestMethod -Method Get -Uri $resource | select -Expand tag_name
 	$arch = "386"
 
-	If ((Get-WmiObject Win32_OperatingSystem).OSArchitecture -eq "64-bit") {
+	If ((Get-WmiObject Win32_OperatingSystem).OSArchitecture -match "64") {
 		$arch = "amd64"
 	}
 
