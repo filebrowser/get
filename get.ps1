@@ -24,7 +24,14 @@ function Install-FileManager {
 	}
 
 	$file = "windows-$arch-filebrowser.zip"
-	$url = "https://github.com/filebrowser/filebrowser/releases/download/$tag/$file"
+
+	# Support env.RELEASE_MIRROR such as `https://gh.api.99988866.xyz/https://github.com`
+	$release_base = "https://github.com"
+	if ($env:RELEASE_MIRROR) {
+		$release_base = $env:RELEASE_MIRROR
+	}
+	$url = "$release_base/filebrowser/filebrowser/releases/download/$tag/$file"
+
 	$temp =  New-TemporaryFile
 	$folder = "${env:ProgramFiles}\filebrowser"
 
