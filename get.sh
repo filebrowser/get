@@ -54,6 +54,8 @@ install_filemanager()
 	case $unamem in
 	*aarch64*|arm64)
 		filemanager_arch="arm64";;
+	riscv64)
+		filemanager_arch="riscv64";;
 	*64*)
 		filemanager_arch="amd64";;
 	*86*)
