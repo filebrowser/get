@@ -107,8 +107,8 @@ install_filemanager()
 	fi
 	
 	filemanager_file="${filemanager_os}-$filemanager_arch-filebrowser$filemanager_dl_ext"
-	filemanager_tag="$(${net_getter}  https://api.github.com/repos/filebrowser/filebrowser/releases/latest | grep -o '"tag_name": ".*"' | sed 's/"//g' | sed 's/tag_name: //g')"
-	filemanager_url="https://github.com/filebrowser/filebrowser/releases/download/$filemanager_tag/$filemanager_file"
+	# Avoid GitHub API dependency/rate-limit failures by downloading from the latest-release redirect.
+	filemanager_url="https://github.com/filebrowser/filebrowser/releases/latest/download/$filemanager_file"
 	echo "$filemanager_url"
 
 	# Use $PREFIX for compatibility with Termux on Android
