@@ -24,22 +24,25 @@
 install_filemanager()
 {
 	trap 'echo -e "Aborted, error $? in command: $BASH_COMMAND"; trap ERR; return 1' ERR
+
+	# defaults to /usr/local
+	[[ -z "$PREFIX" ]] && PREFIX="/usr/local"
+
 	filemanager_os="unsupported"
 	filemanager_arch="unknown"
-	install_path="/usr/local/bin"
+	install_path="$PREFIX/bin"
+	temp_path="/tmp"
 
-	# Termux on Android has $PREFIX set which already ends with /usr
-	if [[ -n "$ANDROID_ROOT" && -n "$PREFIX" ]]; then
-		install_path="$PREFIX/bin"
-	fi
-
-	# Fall back to /usr/bin if necessary
-	if [[ ! -d $install_path ]]; then
-		install_path="/usr/bin"
-	fi
+	# Use $PREFIX for compatibility with Termux on Android
+	[[ -n "$ANDROID_ROOT" ]] && temp_path="$PREFIX/tmp"
 
 	# Not every platform has or needs sudo (https://termux.com/linux.html)
 	((EUID)) && [[ -z "$ANDROID_ROOT" ]] && sudo_cmd="sudo"
+
+	# ensure directories exists
+	[[ ! -d "$PREFIX" ]] && mkdir -p "$PREFIX"
+	[[ ! -d "$install_path" ]] && mkdir -p "$install_path"
+	[[ ! -d "$temp_path" ]] && mkdir -p "$temp_path"
 
 	#########################
 	# Which OS and version? #
@@ -105,30 +108,29 @@ install_filemanager()
 		echo "Aborted, could not find curl or wget"
 		return 7
 	fi
-	
+
 	filemanager_file="${filemanager_os}-$filemanager_arch-filebrowser$filemanager_dl_ext"
 	# Avoid GitHub API dependency/rate-limit failures by downloading from the latest-release redirect.
 	filemanager_url="https://github.com/filebrowser/filebrowser/releases/latest/download/$filemanager_file"
 	echo "$filemanager_url"
 
-	# Use $PREFIX for compatibility with Termux on Android
-	rm -rf "$PREFIX/tmp/$filemanager_file"
+	rm -rf "$temp_path/$filemanager_file"
 
-	${net_getter} "$filemanager_url" > "$PREFIX/tmp/$filemanager_file"
+	${net_getter} "$filemanager_url" > "$temp_path/$filemanager_file"
 
 	echo "Extracting..."
 	case "$filemanager_file" in
-		*.zip)    unzip -o "$PREFIX/tmp/$filemanager_file" "$filemanager_bin" -d "$PREFIX/tmp/" ;;
-		*.tar.gz) tar --no-same-owner -xzf "$PREFIX/tmp/$filemanager_file" -C "$PREFIX/tmp/" "$filemanager_bin" ;;
+		*.zip)    unzip -o "$temp_path/$filemanager_file" "$filemanager_bin" -d "$temp_path/" ;;
+		*.tar.gz) tar --no-same-owner -xzf "$temp_path/$filemanager_file" -C "$temp_path/" "$filemanager_bin" ;;
 	esac
-	chmod +x "$PREFIX/tmp/$filemanager_bin"
+	chmod +x "$temp_path/$filemanager_bin"
 
 	echo "Putting filemanager in $install_path (may require password)"
-	$sudo_cmd mv "$PREFIX/tmp/$filemanager_bin" "$install_path/$filemanager_bin"
+	$sudo_cmd mv "$temp_path/$filemanager_bin" "$install_path/$filemanager_bin"
 	if setcap_cmd=$(PATH+=$PATH:/sbin type -p setcap); then
 		$sudo_cmd $setcap_cmd cap_net_bind_service=+ep "$install_path/$filemanager_bin"
 	fi
-	$sudo_cmd rm -- "$PREFIX/tmp/$filemanager_file"
+	$sudo_cmd rm -- "$temp_path/$filemanager_file"
 
 	if type -p $filemanager_bin >/dev/null 2>&1; then
 		echo "Successfully installed"
