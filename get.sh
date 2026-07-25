@@ -24,22 +24,20 @@
 install_filemanager()
 {
 	trap 'echo -e "Aborted, error $? in command: $BASH_COMMAND"; trap ERR; return 1' ERR
+
+	# defaults to /usr/local
+	[[ -z "$PREFIX" ]] && PREFIX="/usr/local"
+
 	filemanager_os="unsupported"
 	filemanager_arch="unknown"
-	install_path="/usr/local/bin"
-
-	# Termux on Android has $PREFIX set which already ends with /usr
-	if [[ -n "$ANDROID_ROOT" && -n "$PREFIX" ]]; then
-		install_path="$PREFIX/bin"
-	fi
-
-	# Fall back to /usr/bin if necessary
-	if [[ ! -d $install_path ]]; then
-		install_path="/usr/bin"
-	fi
+	install_path="$PREFIX/bin"
 
 	# Not every platform has or needs sudo (https://termux.com/linux.html)
 	((EUID)) && [[ -z "$ANDROID_ROOT" ]] && sudo_cmd="sudo"
+
+	# ensure directories exists
+	[[ ! -d "$PREFIX" ]] && mkdir -p "$PREFIX"
+	[[ ! -d "$install_path" ]] && mkdir -p "$install_path"
 
 	#########################
 	# Which OS and version? #
